@@ -25,7 +25,10 @@ class App extends Component {
     console.log("Update", post);
     post.title = "UPDATED";
     // put request updates all properties, patch only some
-    const { data } = await http.put(`${config.apiEndpoint}/${post.id}`, post);
+    const { data } = await http.put(
+      `${config.apiEndpoint + "balls"}/balls${post.id}`,
+      post
+    );
     const posts = [...this.state.posts];
     const index = posts.indexOf(post);
     posts[index] = { ...post };
